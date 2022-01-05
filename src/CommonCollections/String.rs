@@ -1,3 +1,5 @@
+use unicode_segmentation::UnicodeSegmentation;
+
 fn main() {
     // String
     // UTF-8
@@ -29,4 +31,24 @@ fn main() {
     let s8 = s5 + " in Russia is " + &s6;
 
     println!("{:?}", s8);
+
+    // lưu trữ trong string
+    // bytes
+    println!("bytes");
+    for s in s6.bytes() {
+        print!("{:?} ", s);
+    }
+
+    // char: scalar values
+    println!("\nchar");
+    for s in s6.chars() {
+        print!("{:?} ", s);
+    }
+
+    // Grapheme Clusters: kiểu sử dụng unicode để in ra 1 ký tự hoàn chỉnh
+    // sử dụng thư viện unicode-segmentation
+    println!("\ngraphemes");
+    for s in s6.graphemes(true) {
+        print!("{:?} ", s);
+    }
 }
