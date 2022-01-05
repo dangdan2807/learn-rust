@@ -31,6 +31,7 @@ fn eat_res() {
 fn main() {
     let mut order1 = back_house::Breakfast::monday("Fish");
     println!("{:?}", order1);
+    
     // cách thuộc tính trong struct phải public mới có thể update
     order1.toast = String::from("Chicken");
     println!("{:?}", order1);
